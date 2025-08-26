@@ -45,21 +45,11 @@ void MovRainha(int r){
 // Movimento do Cavalo com loops com variáveis múltiplas e condições avançadas.
 
 void MovCavalo(){
-    int cv,ch;
-
-    // Loop externo controla movimento vertical para cima.
-    for (cv = 1; cv <= 2; cv++) {
+    for (int cv = 1, ch = 0; cv <= 2; cv++, ch++) {
         printf("Cima\n");
-
-        // Loop interno para verificar condição e controlar o movimento horizontal (direita).
-        for (ch = 1; ch <= cv; ch++) {
-            if (ch == 1) {
-                continue; // pula a primeira vez
-            }
-            if (ch > 1) {
-                printf("Direita\n");
-                break; // garante que só anda 1 vez para direita
-            }
+        if (cv == 2) {
+            printf("Direita\n");
+            break;
         }
     }
 }
